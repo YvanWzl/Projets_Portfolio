@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration:none;
+}
+
+.bandeau {
+    max-width: 100%;   /* largeur de la fenêtre */
+    overflow: hidden;  /* masque tout ce qui dépasse */
+  }
+
+.bandeau > :first-child {
+    display: inline-block;                /* modèle de boîte en ligne */
+    padding-right: 2em;                   /* un peu d'espace pour la transition */
+    padding-left: 100%;                   /* placement à droite du conteneur */
+    white-space: nowrap;                  /* pas de passage à la ligne */
+    animation: defilement-rtl 30s infinite linear;
+  }
+
+  @keyframes defilement-rtl {
+    0% {
+      transform: translate3d(0,0,0);      /* position initiale à droite */
+    }
+    100% {
+      transform: translate3d(-100%,0,0);  /* position finale à gauche */
+    }
+  }
+
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    font-family: Andale Mono, monospace;
+    background-color: rgba(231, 101, 96, 0.833);
+    border-bottom: rgb(202, 87, 83) 2px solid; 
+    border-top: rgb(202, 87, 83) 2px solid;
+}
+
+h1 a {
+    color: white;
+}
+
+
+.logo {
+    position: absolute;
+    margin-top: -101px;
+    margin-left: 50px;
+    height: 125px;
+    width: 145px;
+}
+
+main {
+    margin-top: 29px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.contain {
+    flex-direction: column;
+    background-color: white;
+    flex: 1;
+    border-right: black solid 2px;
+}
+
+.nav li {
+    font-family: Courier, monospace;
+    font-size: x-large;
+    text-align: center;
+    border-bottom: solid black 2px;
+    padding: 10px;
+}
+
+.nav li:hover {
+    font-weight: bold;
+}
+
+
+.nav li a {
+    color: black;
+    padding: 10px;
+}
+
+.infos {
+    flex: 5 ;
+    background-color: rgba(231, 101, 96, 0.3);
+}
+
+.deco {
+    border-top: solid black 2px;
+    margin-top: 79.6vh;
+}
+
+
+
+
+h2 {
+    font-family: Courier, monospace;
+    margin-top: 35px;
+    margin-left: 90px;
+}
+
+
+form {
+    margin-left: 370px;
+    margin-top: 50px;
+}
+
+label {
+    font-family: American Typewriter, serif;
+    font-size: large;
+}
+
+input {
+    margin-bottom: 20px;
+    
+}
+
+
+
+.menu {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: -50px;
+    margin-right: 75px ;
+    
+}
+
+.menu li {
+    margin-right: 50px;
+}
+
+.menu li a {
+    color: black;
+    font-family: American Typewriter, serif;
+        font-size: large;
+}
+
+.menu li a:hover {
+    color: white;
+}
+
+
+
+
+
+footer {
+    height: 150px;
+    background-color: rgb(99,39,224);
+}
+
+.footer {
+    display: flex;
+    color: white;
+}
+
+.footer li {
+    margin-top: 30px; 
+    margin-left: 200px;
+    margin-right: 100px;
+    font-size: larger;
+    text-decoration: underline;
+}
+
+.transport {
+    height: 60px;
+    margin-left: 173px;
+    margin-top: 5px;
+}
+
+.paiement {
+    height: 40px;
+    margin-bottom: 13px;
+    margin-left: 225px;
+}
+
+.cgv {
+  margin-left: 50px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "seiko",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "front": "cd Front && npm start",
+    "build": "cd Front && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserify-zlib": "^0.2.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
