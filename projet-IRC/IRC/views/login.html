@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page de Connexion</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <style>
+        body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(115deg, #ffffff 10%, #ffefba 90%);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+    font-family: Didot, serif;
+}
+
+h2 {
+    margin-top: 80px;
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    color: #007BFF;
+}
+    </style>
+    
+    <h1>Bonjour, bienvenue sur notre chat en ligne.</h1>
+
+    <h2>Connexion</h1>
+
+    <form id ="form" action="/login" method="post">
+        <div>
+            <label for="nom">Nom d'utilisateur:</label>
+            <input type="text" id="username" name="username" required placeholder="Entrez votre nom d'utilisateur">
+        </div>
+
+        <div>
+            <label for="mot-de-passe">Mot de passe:</label>
+            <input type="password" id="password" name="password" required placeholder="Entrez votre mot de passe">
+        </div>
+
+        <input type="submit" value="Se Connecter">
+    </form>
+
+   
+</body>
+</html>

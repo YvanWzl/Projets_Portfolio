@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket.IO chat</title>
+    <style>
+       body {
+    margin: 0;
+    padding-bottom: 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#form {
+    background: rgba(1, 157, 253, 0.262);
+    padding: 0.25rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 3rem;
+    width: 1150px;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+    margin-left: 325px;
+    border-radius: 20px 0 0 20px;
+    border-left: 1px solid #ccc;
+}
+
+#input {
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    border-radius: 2rem;
+    margin: 0.25rem;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#form>button {
+    background: #003267;
+    border: none;
+    padding: 0 1rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 1150px;
+    margin-left: 325px;
+}
+
+#messages>li {
+    padding: 0.5rem 1rem;
+}
+
+#messages>li:nth-child(odd) {
+    background: #efefef;
+}
+
+.chat {
+    background: rgba(1, 157, 253, 0.262);
+    width: 327px;
+    height: 735px;
+    font-size: larger;
+    font-weight: 700;
+    text-align: center;
+    margin-top: -30px;
+    padding-top: 27px;
+    position: fixed;
+}
+
+
+
+
+.private {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    margin-left: -100px;
+    margin-top: 5px;
+}
+
+.band {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    margin-left: 50px;
+}
+
+.pr {
+    margin-left: -175px;
+    margin-top: 20px;
+    color: black;
+}
+
+.gr {
+    margin-top: -40px;
+    margin-left: 150px;
+    color: black;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+      <div class="chat">
+       <h1>Groupes</h1> 
+       <hr color="black">
+       <a href="chat.html" style="text-decoration:none"><p class="pr">Privé</p></a>
+ 
+        <a href="chat_groupe.html" style="text-decoration:none"><p class="gr">Groupes</p></a>
+       
+        <hr color="black">
+       
+      </div>
+      
+     
+    </nav>
+
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" placeholder="Entrez votre message"/><button>Send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const form = document.getElementById('form'); // Ajoutez "document." avant "getElementById"
+        const input = document.getElementById('input'); // Ajoutez "document." avant "getElementById"
+
+        form.addEventListener('submit', function(e) { // "addEventListerner" doit être "addEventListener"
+            e.preventDefault();
+            if (input.value) {
+                socket.emit('chat message', input.value); // Utilisez 'chat message' au lieu de 'chat'
+                input.value = '';
+            }
+        });
+        socket.on('chat message', (msg) => {
+    const item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+  
+        })
+    </script>
+</body>
+
+</html>
